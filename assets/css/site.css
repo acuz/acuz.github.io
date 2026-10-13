@@ -169,6 +169,8 @@ cite { font-style: italic; }
 .paper-title a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .paper-authors { color: var(--ink); }
+.paper-authors a { color: var(--ink); }
+.paper-authors a:hover { color: var(--accent); }
 
 .paper-meta,
 .paper-note,
@@ -195,10 +197,11 @@ cite { font-style: italic; }
 .abstract p {
   font-size: 1rem;
   line-height: 1.55;
-  padding-left: 1rem;
+  padding: 0 0 0.6rem 1rem;
   border-left: 2px solid var(--rule);
-  margin: 0 0 0.6rem;
+  margin: 0;
 }
+.abstract p:last-child { padding-bottom: 0; }
 
 /* ---------- teaching ---------- */
 
