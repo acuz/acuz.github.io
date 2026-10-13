@@ -39,6 +39,13 @@ plugins:
 
 markdown: kramdown
 
+defaults:
+  - scope:
+      path: "legacy"
+    values:
+      sitemap: false
+
 exclude:
   - README.md
+  - legacy/README.md
   - LICENSE
