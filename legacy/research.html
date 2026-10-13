@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <style>
+/* Angelo Cuzzola, personal site. One file, no framework. */
+
+:root {
+  --paper: #fbf9f5;
+  --ink: #1f1c19;
+  --muted: #6b635a;
+  --rule: #e3ddd3;
+  --accent: #8c2f24;
+  --accent-hover: #6b2018;
+  --wash: #f3eee6;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --measure: 40rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-embedded]) {
+    --paper: #161412;
+    --ink: #e9e4dc;
+    --muted: #a39a8f;
+    --rule: #332e29;
+    --accent: #e3907f;
+    --accent-hover: #f0b2a4;
+    --wash: #201d1a;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Inside the old Google Site's embeds: blend into the host page. */
+:root[data-embedded], :root[data-embedded] body { background: transparent; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: calc(var(--measure) + 2.5rem);
+  padding: 0 1.25rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* ---------- links ---------- */
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+a:hover { color: var(--accent-hover); text-decoration-color: currentColor; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.25rem 0.5rem; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 2.75rem 0 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-name:hover { color: var(--ink); }
+
+.site-header ul {
+  display: flex;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-header nav a {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-header nav a:hover { color: var(--accent); }
+.site-header nav a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* ---------- text ---------- */
+
+h1, h2, h3 { font-weight: 600; line-height: 1.25; }
+h1 { font-size: 1.75rem; margin: 0 0 1.5rem; }
+h2 {
+  font-size: 1rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 3rem 0 1.25rem;
+}
+
+p { margin: 0 0 1.1rem; }
+
+.lead { font-size: 1.25rem; line-height: 1.5; }
+
+address { font-style: normal; margin-bottom: 1rem; }
+
+cite { font-style: italic; }
+
+.portrait {
+  float: right;
+  width: 9rem;
+  height: auto;
+  margin: 0.35rem 0 1rem 1.75rem;
+  border-radius: 2px;
+}
+
+.link-row, .aside { font-size: 1rem; }
+.aside { color: var(--muted); margin-top: 3rem; }
+
+/* ---------- papers ---------- */
+
+.papers { list-style: none; margin: 0; padding: 0; }
+
+.paper {
+  padding: 0 0 1.6rem;
+  margin: 0 0 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.paper:last-child { border-bottom: 0; margin-bottom: 0; }
+
+.paper p { margin: 0; }
+
+.paper-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.25rem !important;
+}
+.paper-title a { color: var(--ink); text-decoration-color: var(--rule); }
+.paper-title a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+.paper-authors { color: var(--ink); }
+.paper-authors a { color: var(--ink); }
+.paper-authors a:hover { color: var(--accent); }
+
+.paper-meta,
+.paper-note,
+.paper-links,
+.abstract summary {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.paper-meta { color: var(--muted); margin-top: 0.2rem !important; }
+.paper-meta cite { color: var(--ink); }
+.paper-note { color: var(--muted); margin-top: 0.2rem; }
+.paper-note p { margin: 0; }
+.paper-links { margin-top: 0.45rem !important; }
+
+.abstract { margin-top: 0.45rem; }
+.abstract summary {
+  cursor: pointer;
+  color: var(--accent);
+  width: fit-content;
+}
+.abstract summary:hover { color: var(--accent-hover); }
+.abstract[open] summary { margin-bottom: 0.5rem; }
+.abstract p {
+  font-size: 1rem;
+  line-height: 1.55;
+  padding: 0 0 0.6rem 1rem;
+  border-left: 2px solid var(--rule);
+  margin: 0;
+}
+.abstract p:last-child { padding-bottom: 0; }
+
+/* ---------- teaching ---------- */
+
+.entry { margin-bottom: 1.1rem; }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin: 4rem 0 0;
+  padding: 1.25rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.site-footer p { margin: 0; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 34rem) {
+  body { font-size: 1.0625rem; }
+  .site-header { padding-top: 1.75rem; margin-bottom: 1.75rem; }
+  .lead { font-size: 1.15rem; }
+  .portrait { width: 6.5rem; margin-left: 1rem; }
+}
+
+@media print {
+  .site-header nav, .site-footer, .skip { display: none; }
+  body { background: #fff; color: #000; }
+  .abstract { display: none; }
+}
+
+  .legacy-banner { margin: 0 calc(50% - 50vw); padding: 0.7rem 1.25rem; background: #fdf7e3; border-bottom: 1px solid #e8dfc4;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 0.9rem; line-height: 1.45; color: #3d3524; text-align: center; }
+  .legacy-banner a { color: #8c2f24; font-weight: 600; }
+  @media (prefers-color-scheme: dark) {
+    .legacy-banner { background: #2a2617; border-bottom-color: #3d3726; color: #e9e1c8; }
+    .legacy-banner a { color: #e3907f; }
+  }
+</style>
+  <link rel="icon" href="https://acuz.github.io/assets/favicon.svg" type="image/svg+xml">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Research | Angelo Cuzzola</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Research" />
+<meta name="author" content="Angelo Cuzzola" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Publications, papers under revision and working papers by Angelo Cuzzola." />
+<meta property="og:description" content="Publications, papers under revision and working papers by Angelo Cuzzola." />
+<link rel="canonical" href="https://acuz.github.io/research/" />
+<meta property="og:url" content="https://acuz.github.io/research/" />
+<meta property="og:site_name" content="Angelo Cuzzola" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Research" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Angelo Cuzzola"},"description":"Publications, papers under revision and working papers by Angelo Cuzzola.","headline":"Research","url":"https://acuz.github.io/research/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <div class="legacy-banner" role="note">This site is no longer maintained. The current, up-to-date website is <a href="https://acuz.github.io/research/">acuz.github.io/research</a>.</div>
+  
+  <header class="site-header">
+    <a class="site-name" href="https://sites.google.com/view/angelocuzzola">Angelo Cuzzola</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="https://sites.google.com/view/angelocuzzola/research" aria-current="page">research</a></li>
+        <li><a href="https://sites.google.com/view/angelocuzzola/teaching">teaching</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Research</h1>
+
+
+
+
+
+
+<section aria-labelledby="published">
+<h2 id="published">Publications</h2>
+<ol class="papers">
+<li class="paper" id="bisio2026size">
+  <p class="paper-title"><a href="https://doi.org/10.1007/s11187-026-01227-2">Firm Size and the Automation Wage Premium</a></p>
+  <p class="paper-authors">with
+      <a href="https://www.researchgate.net/profile/Laura-Bisio/research">Laura Bisio</a>,
+      <a href="https://mgrazzi.github.io/">Marco Grazzi</a> and
+      <a href="https://sites.google.com/site/danielemoschella/">Daniele Moschella</a></p>
+  <p class="paper-meta"><cite>Small Business Economics</cite>, online first (2026)</p>
+  <p class="paper-links"><a href="https://link.springer.com/content/pdf/10.1007/s11187-026-01227-2.pdf">pdf (open access)</a> · <a href="https://doi.org/10.1007/s11187-026-01227-2">doi</a></p>
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>We investigate the impact of investment in automation-related goods on wages and wage inequality across firms of different sizes in Italy from 2011 to 2019. We integrate datasets on trade activities, firm, and worker characteristics for the population of Italian importing firms and quantify the automation wage premium for adopting firms, which stands at approximately 10%. However, Mincer-type wage regressions reveal that automation adopters pay approximately 3% higher wages after controlling for worker sorting. We then disentangle the impact of automation adoption on wages from selection into adoption by estimating the effects on adopters’ wages and wage dispersion within a difference-in-differences framework, exploiting import lumpiness in product categories linked to automation technologies (including robots). We find a positive average adoption effect on adopters’ average wages, which stabilizes at around 4% 5 years after an automation spike. Wage increases at small firms primarily explain this effect, while wages at medium and large firms remain stagnant after adoption. Importantly, wage gains coincide with an increase in within-firm wage dispersion in small firms, with wage variance rising by around 7.5%. This result comprises heterogeneous effects not only across firms but also across worker groups: decomposition analysis reveals that wage benefits are concentrated among specific worker categories—employees aged 45 and above, managers, and white-collar workers. Other worker categories experience stagnant wages, although no group shows a negative wage effect.</p>
+
+  </details>
+</li>
+<li class="paper" id="bisio2025automation">
+  <p class="paper-title"><a href="https://doi.org/10.1016/j.euroecorev.2024.104943">The Dynamics of Automation Adoption: Firm-Level Heterogeneity and Aggregate Employment Effects</a></p>
+  <p class="paper-authors">with
+      <a href="https://www.researchgate.net/profile/Laura-Bisio/research">Laura Bisio</a>,
+      <a href="https://mgrazzi.github.io/">Marco Grazzi</a> and
+      <a href="https://sites.google.com/site/danielemoschella/">Daniele Moschella</a></p>
+  <p class="paper-meta"><cite>European Economic Review</cite>, 173, 104943 (2025)</p>
+  <p class="paper-links"><a href="https://doi.org/10.1016/j.euroecorev.2024.104943">doi</a> · <a href="https://www.lem.sssup.it/WPLem/2023-37.html">working paper version</a></p>
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>We investigate the impact of investment in automation-related goods on adopting and non-adopting firms in the Italian economy during 2011–2019. We integrate datasets on trade activities, firms’, and workers’ characteristics for the population of Italian importing firms and estimate the effects on adopters’ outcomes within a difference-in-differences design exploiting import lumpiness in product categories linked to automation technologies (including robots). We find a positive average adoption effect on the adopters’ employment: firms are, on average, around 3% larger in terms of employment after an automation spike. Crucially, the employment effect is heterogeneous across firms: a positive effect is predominant among small firms, which are around 5% larger five years after the spike; on the contrary, a negative displacement effect is predominant among medium and large firms, with an employment contraction at five years of around −4%. This result can shed light on one potential reason behind the mixed results found in previous studies, which often rely on samples with different size distributions. We complete the framework with a 5-digit sector-level analysis showing that adopting automation technologies has an overall weak negative effect on aggregate employment, and with an analysis of the competition effects of automation, showing that non-adopters suffer a loss in sales and employment.</p>
+
+  </details>
+</li>
+<li class="paper" id="barigozzi2025factoring">
+  <p class="paper-title"><a href="https://doi.org/10.1111/obes.12639">Factoring in the Micro: A Transaction-Level Dynamic Factor Approach to the Decomposition of Export Volatility</a></p>
+  <p class="paper-authors">with
+      <a href="https://www.barigozzi.eu/Home.html">Matteo Barigozzi</a>,
+      <a href="https://mgrazzi.github.io/">Marco Grazzi</a> and
+      <a href="https://sites.google.com/site/danielemoschella/">Daniele Moschella</a></p>
+  <p class="paper-meta"><cite>Oxford Bulletin of Economics and Statistics</cite>, 87(1), 155–184 (2025)</p>
+  <p class="paper-links"><a href="https://doi.org/10.1111/obes.12639">doi</a> · <a href="https://www.lem.sssup.it/WPLem/2021-22.html">working paper version</a> · <a href="https://drive.google.com/file/d/18OV_XHLYx0v3xcTqD7NhNCedqNSccsnk/view?usp=drive_link">replication code</a></p>
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>This paper analyzes the export volatility sources estimating a dynamic factor model on transaction-level data. Utilizing an exhaustive dataset of French export transactions from 1993 to 2017, we reconstruct the latent factors space associated with global and destination-specific macroeconomic shocks through a Quasi-Maximum likelihood approach which allows accommodating both the high share of missing values and the high dimensionality of the microeconomic time series. The estimated parameters are then used to derive a volatility decomposition of the aggregate and firm-level export growth rates, highlighting structural spatial patterns and the role of geographical diversification in mitigating export risks.</p>
+
+  </details>
+</li>
+
+</ol>
+</section>
+
+
+
+
+
+<section aria-labelledby="revision">
+<h2 id="revision">Under revision</h2>
+<ol class="papers">
+<li class="paper" id="li2026scaling">
+  <p class="paper-title">The Scaling of Firm Scope in a Catching-up Economy: Evidence from Chinese Manufacturing</p>
+  <p class="paper-authors">with
+      Lanhua Li,
+      Xiaodan Yu,
+      <a href="https://sites.google.com/site/danielemoschella/">Daniele Moschella</a> and
+      Can Huang</p>
+  <p class="paper-meta">Under revision at <cite>Research Policy</cite></p>
+</li>
+<li class="paper" id="cuzzola2025gaming">
+  <p class="paper-title"><a href="https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3094~d3fccfb16c.en.pdf">Gaming the Test? Window-Dressing and Portfolio Similarity around the EU-Wide Stress Tests</a></p>
+  <p class="paper-authors">with
+      <a href="https://scholar.google.it/citations?user=CtcTJFsAAAAJ">Claudio Barbieri</a> and
+      <a href="https://scholar.google.ca/citations?user=pezWUjUAAAAJ">Grzegorz Hałaj</a></p>
+  <p class="paper-meta">Revise and resubmit at <cite>Journal of Financial Intermediation</cite><br>ECB Working Paper No. 3094 (2025)</p>
+  <p class="paper-links"><a href="https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3094~d3fccfb16c.en.pdf">pdf</a> · <a href="https://doi.org/10.2866/1134408">doi</a></p>
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>This study investigates the impact of supervisory stress testing on banks’ behaviors and their systemic risk implications. Utilizing confidential supervisory data from the European Banking Authority’s EU-wide stress tests in 2021 and 2023, we employ a difference-in-differences framework to analyze how these exercises influence portfolio management decisions among European banks. This methodology allows us to compare stress-tested banks with similar non-tested institutions before and after the stress test events, isolating the effects specifically associated with the EU-wide assessments.</p>
+
+<p>Our findings reveal significant patterns of anticipatory behavior, with banks strategically window-dressing their capital ratios before stress tests begin. This behavior is particularly pronounced among institutions that subsequently receive the lowest scores in terms of capital depletion. We document that these anticipatory adjustments lead to decreased portfolio similarity across banks, an effect that persists after the stress tests and remains consistent across different similarity measures. Importantly, such a decrease in similarity does not spin off into more granular business model or country clusters, thus limiting potential systemic risk through portfolio synchronization.</p>
+
+<p>Our results, while considering how financial institutions incorporate stress test considerations into their strategic decision-making, highlight the dual role of stress tests in enhancing individual bank resilience and reducing systemic vulnerabilities. These findings contribute to the ongoing debate on effective banking supervision and the design of regulatory stress testing frameworks.</p>
+
+  </details>
+</li>
+<li class="paper" id="cuzzola2023stress">
+  <p class="paper-title"><a href="https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2814~142d4a795f.en.pdf">Stress Testing with Multi-Faceted Liquidity: The Central Bank Collateral Framework as a Financial Stability Tool</a></p>
+  <p class="paper-authors">with
+      <a href="https://scholar.google.it/citations?user=CtcTJFsAAAAJ">Claudio Barbieri</a> and
+      <a href="https://www.researchgate.net/profile/Ulrich-Bindseil/research">Ulrich Bindseil</a></p>
+  <p class="paper-meta">Under revision <br>ECB Working Paper No. 2814 (2023)</p>
+  <p class="paper-links"><a href="https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2814~142d4a795f.en.pdf">pdf</a> · <a href="https://doi.org/10.2866/910554">doi</a> · <a href="https://www.suerf.org/publications/suerf-policy-notes-and-briefs/how-the-central-bank-collateral-framework-shapes-the-outcomes-of-liquidity-stress-test-models/">SUERF Policy Brief No 637</a></p>
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>The paper studies the central bank collateral framework and its impact on banks’ liquidity under an adverse stress test scenario. We construct a stress test model that accounts for a granular and multifaceted representation of the liquidity of marketable and non-marketable assets. In particular, the model analyses banks’ strategic decisions to mobilise assets through four funding channels: unsecured loans, asset sales, private repurchase agreements, or Central Bank lending. We test three scenarios: the EBA regulatory stress test exercise, a shock to Russia and the Eastern European countries, and a shock to the Southern European countries. Results show that illiquidity can trigger insolvency and that liquidity adjustment can last significantly after the initial shock. We find evidence of a threshold in the benefits of expanding the collateral framework and highlight the heterogeneous effects across different jurisdictions and financial institutions. We find that bank equity losses are reduced in aggregate up to 17% at the tail of the loss distribution and on average by around 5% when financial institutions can rely on the collateral framework channel.</p>
+
+  </details>
+</li>
+
+</ol>
+</section>
+
+
+
+
+
+<section aria-labelledby="working">
+<h2 id="working">Working papers</h2>
+<ol class="papers">
+<li class="paper" id="bisio2026innovation">
+  <p class="paper-title"><a href="https://www.lem.sssup.it/WPLem/files/2026-21.pdf">Innovation, Green Products and Trade: Evidence from Multiproduct Firms</a></p>
+  <p class="paper-authors">with
+      <a href="https://www.researchgate.net/profile/Laura-Bisio/research">Laura Bisio</a>,
+      <a href="https://mgrazzi.github.io/">Marco Grazzi</a> and
+      <a href="https://sites.google.com/site/danielemoschella/">Daniele Moschella</a></p>
+  <p class="paper-meta">LEM Working Paper No. 2026/21</p>
+  <div class="paper-note"><p>Earlier version: “(In Search of) The Green Premium: Transaction-Level Evidence of the Sustainability Advantage”, <a href="https://iit.adelaide.edu.au/news/list/2025/12/17/in-search-of-the-green-premium-transaction-level-evidence-of-the">Jean Monnet Centre of Excellence in Trade &amp; Environment Working Paper No. 25</a> (2025).</p>
+</div>
+  <p class="paper-links"><a href="https://www.lem.sssup.it/WPLem/files/2026-21.pdf">pdf</a> · <a href="https://doi.org/10.57838/sssa/rrn8-d922">doi</a> · <a href="https://sites.google.com/view/angelocuzzola/green-products-and-tech-similarity">classification tools</a></p>
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>We provide transaction-level evidence on the export performance of green products, examining whether environmentally friendly attributes translate into competitive advantage or disadvantage in international markets. Using Italian customs data matched to firm patent portfolios (2005–2019), we track export transactions by firm, product, destination, and patent protection status. Green products and patents are classified using OECD and WIPO taxonomies. We test mechanisms through three sources of variation: within-firm differences in patent protection across destinations, exogenous exchange rate shocks, and destination-specific environmental policy stringency captured by the OECD EPS index, controlling for firm capabilities, product characteristics, and destination market conditions using high-dimensional fixed effects.</p>
+
+<p>Unpatented green products face a price-quantity tradeoff: they command higher unit values but achieve substantially lower export quantities, resulting in net revenue penalties. They exhibit amplified exchange rate sensitivity, consistent with the structural margin constraints that penalize green products relative to conventional ones. Patent protection reverses these patterns: patent-protected green products generate higher export quantities and revenues while retaining most of the unit value premium. This quantity expansion is equivalent for non-green and green patents, indicating that the benefits of patent protection do not depend on the environmental content of the underlying innovation. Exchange rate shocks reveal that patent protection partially mitigates the pricing constraints of green products. Increased stringency of destination environmental policy primarily expands green product exports through quantities rather than prices, attenuating but not eliminating the baseline disadvantages of unpatented green products.</p>
+
+<p>These findings clarify that the structural margin constraints penalizing green products relative to conventional ones impose competitive disadvantages that price premia alone cannot overcome. Patent protection solves two distinct problems—appropriability and credibility—enabling green products to achieve scale.</p>
+
+  </details>
+</li>
+<li class="paper" id="cuzzola2026jobloss">
+  <p class="paper-title">Not All Scars Are Equal: Job Loss Along the Wage Distribution</p>
+  <p class="paper-authors">with
+      Julian Tiedtke</p>
+  <p class="paper-meta">LEM Working Paper, forthcoming</p>
+</li>
+
+</ol>
+</section>
+
+
+
+<p class="aside">PhD thesis: <cite>Three Essays on the Economics of Micro-Macro Interactions</cite>, Sant'Anna School of Advanced Studies, Pisa, 2022.</p>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="mailto:angelo.cuzzola@epfl.ch">angelo.cuzzola@epfl.ch</a>
+      · <a href="https://scholar.google.com/citations?user=x1O3AK8AAAAJ">Google Scholar</a>
+      · <a href="https://orcid.org/0000-0002-3621-0443">ORCID</a>
+    </p>
+  </footer>
+</body>
+</html>

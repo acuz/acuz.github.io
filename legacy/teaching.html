@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <style>
+/* Angelo Cuzzola, personal site. One file, no framework. */
+
+:root {
+  --paper: #fbf9f5;
+  --ink: #1f1c19;
+  --muted: #6b635a;
+  --rule: #e3ddd3;
+  --accent: #8c2f24;
+  --accent-hover: #6b2018;
+  --wash: #f3eee6;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --measure: 40rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-embedded]) {
+    --paper: #161412;
+    --ink: #e9e4dc;
+    --muted: #a39a8f;
+    --rule: #332e29;
+    --accent: #e3907f;
+    --accent-hover: #f0b2a4;
+    --wash: #201d1a;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Inside the old Google Site's embeds: blend into the host page. */
+:root[data-embedded], :root[data-embedded] body { background: transparent; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: calc(var(--measure) + 2.5rem);
+  padding: 0 1.25rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* ---------- links ---------- */
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+a:hover { color: var(--accent-hover); text-decoration-color: currentColor; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.25rem 0.5rem; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 2.75rem 0 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-name:hover { color: var(--ink); }
+
+.site-header ul {
+  display: flex;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-header nav a {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-header nav a:hover { color: var(--accent); }
+.site-header nav a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* ---------- text ---------- */
+
+h1, h2, h3 { font-weight: 600; line-height: 1.25; }
+h1 { font-size: 1.75rem; margin: 0 0 1.5rem; }
+h2 {
+  font-size: 1rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 3rem 0 1.25rem;
+}
+
+p { margin: 0 0 1.1rem; }
+
+.lead { font-size: 1.25rem; line-height: 1.5; }
+
+address { font-style: normal; margin-bottom: 1rem; }
+
+cite { font-style: italic; }
+
+.portrait {
+  float: right;
+  width: 9rem;
+  height: auto;
+  margin: 0.35rem 0 1rem 1.75rem;
+  border-radius: 2px;
+}
+
+.link-row, .aside { font-size: 1rem; }
+.aside { color: var(--muted); margin-top: 3rem; }
+
+/* ---------- papers ---------- */
+
+.papers { list-style: none; margin: 0; padding: 0; }
+
+.paper {
+  padding: 0 0 1.6rem;
+  margin: 0 0 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.paper:last-child { border-bottom: 0; margin-bottom: 0; }
+
+.paper p { margin: 0; }
+
+.paper-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.25rem !important;
+}
+.paper-title a { color: var(--ink); text-decoration-color: var(--rule); }
+.paper-title a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+.paper-authors { color: var(--ink); }
+.paper-authors a { color: var(--ink); }
+.paper-authors a:hover { color: var(--accent); }
+
+.paper-meta,
+.paper-note,
+.paper-links,
+.abstract summary {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.paper-meta { color: var(--muted); margin-top: 0.2rem !important; }
+.paper-meta cite { color: var(--ink); }
+.paper-note { color: var(--muted); margin-top: 0.2rem; }
+.paper-note p { margin: 0; }
+.paper-links { margin-top: 0.45rem !important; }
+
+.abstract { margin-top: 0.45rem; }
+.abstract summary {
+  cursor: pointer;
+  color: var(--accent);
+  width: fit-content;
+}
+.abstract summary:hover { color: var(--accent-hover); }
+.abstract[open] summary { margin-bottom: 0.5rem; }
+.abstract p {
+  font-size: 1rem;
+  line-height: 1.55;
+  padding: 0 0 0.6rem 1rem;
+  border-left: 2px solid var(--rule);
+  margin: 0;
+}
+.abstract p:last-child { padding-bottom: 0; }
+
+/* ---------- teaching ---------- */
+
+.entry { margin-bottom: 1.1rem; }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin: 4rem 0 0;
+  padding: 1.25rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.site-footer p { margin: 0; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 34rem) {
+  body { font-size: 1.0625rem; }
+  .site-header { padding-top: 1.75rem; margin-bottom: 1.75rem; }
+  .lead { font-size: 1.15rem; }
+  .portrait { width: 6.5rem; margin-left: 1rem; }
+}
+
+@media print {
+  .site-header nav, .site-footer, .skip { display: none; }
+  body { background: #fff; color: #000; }
+  .abstract { display: none; }
+}
+
+  .legacy-banner { margin: 0 calc(50% - 50vw); padding: 0.7rem 1.25rem; background: #fdf7e3; border-bottom: 1px solid #e8dfc4;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 0.9rem; line-height: 1.45; color: #3d3524; text-align: center; }
+  .legacy-banner a { color: #8c2f24; font-weight: 600; }
+  @media (prefers-color-scheme: dark) {
+    .legacy-banner { background: #2a2617; border-bottom-color: #3d3726; color: #e9e1c8; }
+    .legacy-banner a { color: #e3907f; }
+  }
+</style>
+  <link rel="icon" href="https://acuz.github.io/assets/favicon.svg" type="image/svg+xml">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Teaching | Angelo Cuzzola</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Teaching" />
+<meta name="author" content="Angelo Cuzzola" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Teaching by Angelo Cuzzola." />
+<meta property="og:description" content="Teaching by Angelo Cuzzola." />
+<link rel="canonical" href="https://acuz.github.io/teaching/" />
+<meta property="og:url" content="https://acuz.github.io/teaching/" />
+<meta property="og:site_name" content="Angelo Cuzzola" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Teaching" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Angelo Cuzzola"},"description":"Teaching by Angelo Cuzzola.","headline":"Teaching","url":"https://acuz.github.io/teaching/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <div class="legacy-banner" role="note">This site is no longer maintained. The current, up-to-date website is <a href="https://acuz.github.io/teaching/">acuz.github.io/teaching</a>.</div>
+  
+  <header class="site-header">
+    <a class="site-name" href="https://sites.google.com/view/angelocuzzola">Angelo Cuzzola</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="https://sites.google.com/view/angelocuzzola/research">research</a></li>
+        <li><a href="https://sites.google.com/view/angelocuzzola/teaching" aria-current="page">teaching</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1 id="teaching">Teaching</h1>
+
+<h2 id="courses">Courses</h2>
+
+<p class="entry"><strong>Technical Change and International Trade</strong><br />
+Master in International Security Studies, Sant’Anna School of Advanced Studies and University of Trento · Autumn 2025</p>
+
+<p class="entry"><strong>Technology Diffusion</strong><br />
+Summer School in Economics of Innovation and Technological Change (ECOINN), Sant’Anna School of Advanced Studies · July 2025, July 2026</p>
+
+<p class="entry"><strong>Exercises in Mathematics: Calculus, Linear Algebra and Optimisation</strong><br />
+PhD in Economics, Sant’Anna School of Advanced Studies · October–November 2024</p>
+
+<h2 id="teaching-assistant">Teaching assistant</h2>
+
+<p class="entry"><strong>Financial Mathematics</strong><br />
+BSc in Economics and Commerce, University of Pisa · Autumn 2023</p>
+
+<p class="entry"><strong>Principles of Mathematics</strong><br />
+BSc in Management and Business for Economics, University of Pisa · Autumn 2023</p>
+
+<p class="entry"><strong>Money and Banking</strong><br />
+Summer term, New York University Florence · June–July 2022</p>
+
+<p class="entry"><strong>Physics 1: Thermodynamics</strong><br />
+BSc in Physics, University of Pavia · Spring 2013</p>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="mailto:angelo.cuzzola@epfl.ch">angelo.cuzzola@epfl.ch</a>
+      · <a href="https://scholar.google.com/citations?user=x1O3AK8AAAAJ">Google Scholar</a>
+      · <a href="https://orcid.org/0000-0002-3621-0443">ORCID</a>
+    </p>
+  </footer>
+</body>
+</html>
