@@ -7,12 +7,12 @@ title: Angelo Cuzzola
 
 {% if site.photo != "" %}<img class="portrait" src="{{ site.photo | relative_url }}" alt="Angelo Cuzzola" width="176" height="220">{% endif %}
 
-I am an applied economist. I am a postdoctoral researcher at EPFL, in the Chair of Science, Technology and Innovation Policy of the [College of Management of Technology](https://www.epfl.ch/schools/cdm/), and a Research Fellow at the [European Central Bank](https://www.ecb.europa.eu/), in the Stress Test Experts Division.
+I am a postdoctoral researcher at the [Chair of Science, Technology, and Innovation Policy](https://www.epfl.ch/labs/stip/) at EPFL and a Research Fellow at the [European Central Bank](https://www.ecb.europa.eu/), in the Stress Test Experts Division.
 {: .lead}
 
-My research uses micro-level data, from firm, product, transaction and worker records, to study innovation and technological change, international trade, firm dynamics, labour markets and financial stability. Recent work looks at how firms adopt automation and what it does to employment and wages, at green products in trade, at the sources of export volatility, and at how banks behave around supervisory stress tests. You can find the papers on the [research]({{ '/research/' | relative_url }}) page.
+My research lies at the intersection of the economics of innovation, technology adoption, and international trade. My approach is quantitative and empirical, drawing on large-scale firm-level administrative sources integrated with granular data on technology use, patents, and cross-border transactions.
 
-Before moving to Lausanne I was a postdoctoral researcher at the Institute of Economics of the Sant'Anna School of Advanced Studies in Pisa, where I also received my PhD in Economics under the supervision of Giovanni Dosi. I studied physics at the universities of Pavia (BSc) and Bologna (MSc).
+I hold a PhD in Economics from the Sant'Anna School of Advanced Studies (Pisa) and have a background in mathematical physics. Alongside my academic work, I collaborate closely with policy institutions and statistical offices, including the Italian National Institute of Statistics (ISTAT) and the European Central Bank.
 
 ## Contact
 
