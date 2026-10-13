@@ -1,0 +1,43 @@
+# Site settings. After editing this file, push; GitHub rebuilds the site in about a minute.
+
+title: Angelo Cuzzola
+description: >-
+  Applied economist. Postdoctoral researcher at EPFL and Research Fellow at the
+  European Central Bank. Innovation, international trade, firm dynamics, labour
+  and financial stability.
+url: "https://acuz.github.io"
+baseurl: ""
+lang: en
+
+author:
+  name: Angelo Cuzzola
+  email: angelo.cuzzola@epfl.ch
+
+# Optional portrait: put a square-ish image at assets/img/photo.jpg and set the path here.
+photo: ""
+
+links:
+  # CV: add cv.pdf to the repository, then set `cv: /cv.pdf` and un-comment the cv menu item below.
+  cv: ""
+  scholar: https://scholar.google.com/citations?user=x1O3AK8AAAAJ
+  orcid: https://orcid.org/0000-0002-3621-0443
+  researchgate: https://www.researchgate.net/profile/Angelo_Cuzzola2
+
+# Navigation, in order. `url` may be a page or a file.
+nav:
+  - title: research
+    url: /research/
+  - title: teaching
+    url: /teaching/
+  # - title: cv
+  #   url: /cv.pdf
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+
+exclude:
+  - README.md
+  - LICENSE

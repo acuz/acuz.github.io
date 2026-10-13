@@ -1,0 +1,141 @@
+# Every paper on the Research page comes from this file.
+#
+# section:   published | revision | working   (the page shows them in that order;
+#            within a section, papers appear in the order listed here)
+# title:     paper title; it links to `url` if one is given
+# coauthors: ids from _data/people.yml, in the order to display
+# venue:     journal, in italics (target journal for papers under revision)
+# details:   volume/issue/pages or "online first", shown after the venue
+# status:    shown before the venue, e.g. "Revise and resubmit at"
+# series:    working-paper series line, e.g. "ECB Working Paper No. 3094 (2025)"
+# links:     small links under the entry (label + url)
+# note:      one extra line (Markdown allowed), e.g. an earlier version
+# abstract:  optional; shown behind an "Abstract" toggle
+#
+# To move a paper (e.g. accepted): change `section`, set venue/details/year, update links.
+
+- id: bisio2026size
+  section: published
+  title: Firm Size and the Automation Wage Premium
+  coauthors: [bisio, grazzi, moschella]
+  venue: Small Business Economics
+  details: online first
+  year: 2026
+  url: https://doi.org/10.1007/s11187-026-01227-2
+  links:
+    - label: pdf (open access)
+      url: https://link.springer.com/content/pdf/10.1007/s11187-026-01227-2.pdf
+    - label: doi
+      url: https://doi.org/10.1007/s11187-026-01227-2
+  abstract: |-
+    We investigate the impact of investment in automation-related goods on wages and wage inequality across firms of different sizes in Italy from 2011 to 2019. We integrate datasets on trade activities, firm, and worker characteristics for the population of Italian importing firms and quantify the automation wage premium for adopting firms, which stands at approximately 10%. However, Mincer-type wage regressions reveal that automation adopters pay approximately 3% higher wages after controlling for worker sorting. We then disentangle the impact of automation adoption on wages from selection into adoption by estimating the effects on adopters’ wages and wage dispersion within a difference-in-differences framework, exploiting import lumpiness in product categories linked to automation technologies (including robots). We find a positive average adoption effect on adopters’ average wages, which stabilizes at around 4% 5 years after an automation spike. Wage increases at small firms primarily explain this effect, while wages at medium and large firms remain stagnant after adoption. Importantly, wage gains coincide with an increase in within-firm wage dispersion in small firms, with wage variance rising by around 7.5%. This result comprises heterogeneous effects not only across firms but also across worker groups: decomposition analysis reveals that wage benefits are concentrated among specific worker categories—employees aged 45 and above, managers, and white-collar workers. Other worker categories experience stagnant wages, although no group shows a negative wage effect.
+
+- id: bisio2025automation
+  section: published
+  title: "The Dynamics of Automation Adoption: Firm-Level Heterogeneity and Aggregate Employment Effects"
+  coauthors: [bisio, grazzi, moschella]
+  venue: European Economic Review
+  details: "173, 104943"
+  year: 2025
+  url: https://doi.org/10.1016/j.euroecorev.2024.104943
+  links:
+    - label: doi
+      url: https://doi.org/10.1016/j.euroecorev.2024.104943
+    - label: working paper version
+      url: https://www.lem.sssup.it/WPLem/2023-37.html
+  abstract: |-
+    We investigate the impact of investment in automation-related goods on adopting and non-adopting firms in the Italian economy during 2011–2019. We integrate datasets on trade activities, firms’, and workers’ characteristics for the population of Italian importing firms and estimate the effects on adopters’ outcomes within a difference-in-differences design exploiting import lumpiness in product categories linked to automation technologies (including robots). We find a positive average adoption effect on the adopters’ employment: firms are, on average, around 3% larger in terms of employment after an automation spike. Crucially, the employment effect is heterogeneous across firms: a positive effect is predominant among small firms, which are around 5% larger five years after the spike; on the contrary, a negative displacement effect is predominant among medium and large firms, with an employment contraction at five years of around −4%. This result can shed light on one potential reason behind the mixed results found in previous studies, which often rely on samples with different size distributions. We complete the framework with a 5-digit sector-level analysis showing that adopting automation technologies has an overall weak negative effect on aggregate employment, and with an analysis of the competition effects of automation, showing that non-adopters suffer a loss in sales and employment.
+
+- id: barigozzi2025factoring
+  section: published
+  title: "Factoring in the Micro: A Transaction-Level Dynamic Factor Approach to the Decomposition of Export Volatility"
+  coauthors: [barigozzi, grazzi, moschella]
+  venue: Oxford Bulletin of Economics and Statistics
+  details: "87(1), 155–184"
+  year: 2025
+  url: https://doi.org/10.1111/obes.12639
+  links:
+    - label: doi
+      url: https://doi.org/10.1111/obes.12639
+    - label: working paper version
+      url: https://www.lem.sssup.it/WPLem/2021-22.html
+    - label: replication code
+      url: https://drive.google.com/file/d/18OV_XHLYx0v3xcTqD7NhNCedqNSccsnk/view?usp=drive_link
+  abstract: |-
+    This paper analyzes the export volatility sources estimating a dynamic factor model on transaction-level data. Utilizing an exhaustive dataset of French export transactions from 1993 to 2017, we reconstruct the latent factors space associated with global and destination-specific macroeconomic shocks through a Quasi-Maximum likelihood approach which allows accommodating both the high share of missing values and the high dimensionality of the microeconomic time series. The estimated parameters are then used to derive a volatility decomposition of the aggregate and firm-level export growth rates, highlighting structural spatial patterns and the role of geographical diversification in mitigating export risks.
+
+- id: li2026scaling
+  section: revision
+  title: "The Scaling of Firm Scope in a Catching-up Economy: Evidence from Chinese Manufacturing"
+  coauthors: [li, yu, moschella, huang]
+  status: Under revision at
+  venue: Research Policy
+  abstract: ""
+
+- id: cuzzola2025gaming
+  section: revision
+  title: "Gaming the Test? Window-Dressing and Portfolio Similarity around the EU-Wide Stress Tests"
+  coauthors: [barbieri, halaj]
+  status: Revise and resubmit at
+  venue: Journal of Financial Intermediation
+  series: ECB Working Paper No. 3094 (2025)
+  url: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3094~d3fccfb16c.en.pdf
+  links:
+    - label: pdf
+      url: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3094~d3fccfb16c.en.pdf
+    - label: doi
+      url: https://doi.org/10.2866/1134408
+  abstract: |-
+    This study investigates the impact of supervisory stress testing on banks’ behaviors and their systemic risk implications. Utilizing confidential supervisory data from the European Banking Authority’s EU-wide stress tests in 2021 and 2023, we employ a difference-in-differences framework to analyze how these exercises influence portfolio management decisions among European banks. This methodology allows us to compare stress-tested banks with similar non-tested institutions before and after the stress test events, isolating the effects specifically associated with the EU-wide assessments.
+
+    Our findings reveal significant patterns of anticipatory behavior, with banks strategically window-dressing their capital ratios before stress tests begin. This behavior is particularly pronounced among institutions that subsequently receive the lowest scores in terms of capital depletion. We document that these anticipatory adjustments lead to decreased portfolio similarity across banks, an effect that persists after the stress tests and remains consistent across different similarity measures. Importantly, such a decrease in similarity does not spin off into more granular business model or country clusters, thus limiting potential systemic risk through portfolio synchronization.
+
+    Our results, while considering how financial institutions incorporate stress test considerations into their strategic decision-making, highlight the dual role of stress tests in enhancing individual bank resilience and reducing systemic vulnerabilities. These findings contribute to the ongoing debate on effective banking supervision and the design of regulatory stress testing frameworks.
+
+- id: cuzzola2023stress
+  section: revision
+  title: "Stress Testing with Multi-Faceted Liquidity: The Central Bank Collateral Framework as a Financial Stability Tool"
+  coauthors: [barbieri, bindseil]
+  status: Under revision
+  series: ECB Working Paper No. 2814 (2023)
+  url: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2814~142d4a795f.en.pdf
+  links:
+    - label: pdf
+      url: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2814~142d4a795f.en.pdf
+    - label: doi
+      url: https://doi.org/10.2866/910554
+    - label: SUERF Policy Brief No 637
+      url: https://www.suerf.org/publications/suerf-policy-notes-and-briefs/how-the-central-bank-collateral-framework-shapes-the-outcomes-of-liquidity-stress-test-models/
+  abstract: |-
+    The paper studies the central bank collateral framework and its impact on banks’ liquidity under an adverse stress test scenario. We construct a stress test model that accounts for a granular and multifaceted representation of the liquidity of marketable and non-marketable assets. In particular, the model analyses banks’ strategic decisions to mobilise assets through four funding channels: unsecured loans, asset sales, private repurchase agreements, or Central Bank lending. We test three scenarios: the EBA regulatory stress test exercise, a shock to Russia and the Eastern European countries, and a shock to the Southern European countries. Results show that illiquidity can trigger insolvency and that liquidity adjustment can last significantly after the initial shock. We find evidence of a threshold in the benefits of expanding the collateral framework and highlight the heterogeneous effects across different jurisdictions and financial institutions. We find that bank equity losses are reduced in aggregate up to 17% at the tail of the loss distribution and on average by around 5% when financial institutions can rely on the collateral framework channel.
+
+- id: bisio2026innovation
+  section: working
+  title: "Innovation, Green Products and Trade: Evidence from Multiproduct Firms"
+  coauthors: [bisio, grazzi, moschella]
+  series: LEM Working Paper No. 2026/21
+  url: https://www.lem.sssup.it/WPLem/files/2026-21.pdf
+  links:
+    - label: pdf
+      url: https://www.lem.sssup.it/WPLem/files/2026-21.pdf
+    - label: doi
+      url: https://doi.org/10.57838/sssa/rrn8-d922
+    - label: classification tools
+      url: /tools/green-products/
+  note: >-
+    Earlier version: “(In Search of) The Green Premium: Transaction-Level Evidence of the
+    Sustainability Advantage”, [Jean Monnet Centre of Excellence in Trade & Environment
+    Working Paper No. 25](https://iit.adelaide.edu.au/news/list/2025/12/17/in-search-of-the-green-premium-transaction-level-evidence-of-the) (2025).
+  abstract: |-
+    We provide transaction-level evidence on the export performance of green products, examining whether environmentally friendly attributes translate into competitive advantage or disadvantage in international markets. Using Italian customs data matched to firm patent portfolios (2005–2019), we track export transactions by firm, product, destination, and patent protection status. Green products and patents are classified using OECD and WIPO taxonomies. We test mechanisms through three sources of variation: within-firm differences in patent protection across destinations, exogenous exchange rate shocks, and destination-specific environmental policy stringency captured by the OECD EPS index, controlling for firm capabilities, product characteristics, and destination market conditions using high-dimensional fixed effects.
+
+    Unpatented green products face a price-quantity tradeoff: they command higher unit values but achieve substantially lower export quantities, resulting in net revenue penalties. They exhibit amplified exchange rate sensitivity, consistent with the structural margin constraints that penalize green products relative to conventional ones. Patent protection reverses these patterns: patent-protected green products generate higher export quantities and revenues while retaining most of the unit value premium. This quantity expansion is equivalent for non-green and green patents, indicating that the benefits of patent protection do not depend on the environmental content of the underlying innovation. Exchange rate shocks reveal that patent protection partially mitigates the pricing constraints of green products. Increased stringency of destination environmental policy primarily expands green product exports through quantities rather than prices, attenuating but not eliminating the baseline disadvantages of unpatented green products.
+
+    These findings clarify that the structural margin constraints penalizing green products relative to conventional ones impose competitive disadvantages that price premia alone cannot overcome. Patent protection solves two distinct problems—appropriability and credibility—enabling green products to achieve scale.
+
+- id: cuzzola2026jobloss
+  section: working
+  title: "Not All Scars Are Equal: Job Loss Along the Wage Distribution"
+  coauthors: [tiedtke]
+  series: LEM Working Paper, forthcoming
+  abstract: ""

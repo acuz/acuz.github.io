@@ -1,0 +1,42 @@
+{%- assign p = include.paper -%}
+<li class="paper" id="{{ p.id }}">
+  <p class="paper-title">
+    {%- if p.url -%}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{%- else -%}{{ p.title }}{%- endif -%}
+  </p>
+  {%- if p.coauthors and p.coauthors.size > 0 %}
+  <p class="paper-authors">with
+    {%- for key in p.coauthors -%}
+      {%- assign person = site.data.people[key] -%}
+      {%- if forloop.first == false -%}{%- if forloop.last -%}{{ " and" }}{%- else -%},{%- endif -%}{%- endif %}
+      {% if person.url and person.url != "" %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif -%}
+    {%- endfor -%}
+  </p>
+  {%- endif %}
+  <p class="paper-meta">
+    {%- if p.status %}{{ p.status }} {% endif -%}
+    {%- if p.venue %}<cite>{{ p.venue }}</cite>{% endif -%}
+    {%- if p.details %}, {{ p.details }}{% endif -%}
+    {%- if p.year and p.section == "published" %} ({{ p.year }}){% endif -%}
+    {%- if p.series -%}
+      {%- if p.status or p.venue %}<br>{% endif -%}
+      {{ p.series }}
+    {%- endif -%}
+  </p>
+  {%- if p.note %}
+  <div class="paper-note">{{ p.note | markdownify }}</div>
+  {%- endif %}
+  {%- if p.links %}
+  <p class="paper-links">
+    {%- for l in p.links -%}
+      {%- unless forloop.first %} · {% endunless -%}
+      <a href="{{ l.url | relative_url }}">{{ l.label }}</a>
+    {%- endfor -%}
+  </p>
+  {%- endif %}
+  {%- if p.abstract and p.abstract != "" %}
+  <details class="abstract">
+    <summary>Abstract</summary>
+    {{ p.abstract | markdownify }}
+  </details>
+  {%- endif %}
+</li>

@@ -1,0 +1,35 @@
+# Coauthors. Key = short id used in papers.yml. Leave `url` empty to show the name without a link.
+
+bisio:
+  name: Laura Bisio
+  url: https://www.researchgate.net/profile/Laura-Bisio/research
+moschella:
+  name: Daniele Moschella
+  url: https://sites.google.com/site/danielemoschella/
+grazzi:
+  name: Marco Grazzi
+  url: https://mgrazzi.github.io/
+barigozzi:
+  name: Matteo Barigozzi
+  url: https://www.barigozzi.eu/Home.html
+barbieri:
+  name: Claudio Barbieri
+  url: https://scholar.google.it/citations?user=CtcTJFsAAAAJ
+halaj:
+  name: Grzegorz Hałaj
+  url: https://scholar.google.ca/citations?user=pezWUjUAAAAJ
+bindseil:
+  name: Ulrich Bindseil
+  url: https://www.researchgate.net/profile/Ulrich-Bindseil/research
+li:
+  name: Lanhua Li
+  url: ""
+yu:
+  name: Xiaodan Yu
+  url: ""
+huang:
+  name: Can Huang
+  url: ""
+tiedtke:
+  name: Julian Tiedtke
+  url: ""
