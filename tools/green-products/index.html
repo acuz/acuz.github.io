@@ -6,6 +6,13 @@
     <title>Green Products Classification Tools · Angelo Cuzzola</title>
     <meta name="description" content="Companion classification tools for Bisio, Cuzzola, Grazzi and Moschella, Innovation, Green Products and Trade: Evidence from Multiproduct Firms.">
     <meta name="color-scheme" content="light dark">
+    <script>
+        /* When shown inside another page (the old Google Site embeds it): light theme, links open in the full window. */
+        if (window.self !== window.top) {
+            document.documentElement.setAttribute('data-embedded', '');
+            var b = document.createElement('base'); b.target = '_top'; document.head.appendChild(b);
+        }
+    </script>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +27,7 @@
             --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         @media (prefers-color-scheme: dark) {
-            :root {
+            :root:not([data-embedded]) {
                 --paper: #161412; --ink: #e9e4dc; --muted: #a39a8f; --rule: #332e29;
                 --accent: #e3907f; --accent-hover: #f0b2a4; --wash: #201d1a;
                 --green: #9cc3a5; --green-wash: #1f2a22; --grey-wash: #26231f;

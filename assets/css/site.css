@@ -14,7 +14,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-embedded]) {
     --paper: #161412;
     --ink: #e9e4dc;
     --muted: #a39a8f;
