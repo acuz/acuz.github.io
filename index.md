@@ -12,7 +12,7 @@ I am a postdoctoral researcher at the [Chair of Science, Technology, and Innovat
 
 My research lies at the intersection of the economics of innovation, technology adoption, and international trade. My approach is quantitative and empirical, drawing on large-scale firm-level administrative sources integrated with granular data on technology use, patents, and cross-border transactions.
 
-I hold a PhD in Economics from the Sant'Anna School of Advanced Studies (Pisa) and have a background in mathematical physics. Alongside my academic work, I collaborate closely with policy institutions and statistical offices, including the [Italian National Institute of Statistics (ISTAT)](https://www.istat.it/en/) and the [European Central Bank](https://www.ecb.europa.eu/).
+I hold a PhD in Economics from the Sant'Anna School of Advanced Studies (Pisa) and have a background in mathematical physics. Alongside my academic work, I collaborate closely with policy institutions and statistical offices, including the Italian National Institute of Statistics (ISTAT) and the European Central Bank.
 
 ## Contact
 
