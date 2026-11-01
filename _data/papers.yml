@@ -137,5 +137,12 @@
   section: working
   title: "Not All Scars Are Equal: Job Loss Along the Wage Distribution"
   coauthors: [tiedtke]
-  series: LEM Working Paper, forthcoming
-  abstract: ""
+  series: LEM Working Paper No. 2026/30
+  url: https://www.lem.sssup.it/WPLem/files/2026-30.pdf
+  links:
+    - label: pdf
+      url: https://www.lem.sssup.it/WPLem/files/2026-30.pdf
+    - label: estimator and Monte Carlo simulations
+      url: https://acuz.github.io/cohort-matched-did/
+  abstract: |-
+    We study how the costs of job loss vary along the wage distribution. Using administrative data from Portugal, we combine a two-sided wage determination model with a matched difference-in-differences design. We show that such designs suffer from a cross-cohort pooling bias under staggered treatment, and we propose an extension of the Callaway and Sant'Anna (2021) estimator that restricts each cohort to its own matched controls. Job loss leads to persistent earnings losses along the entire wage distribution, but their sources differ. Workers at the top are re-employed at much lower hourly wages, while workers at the bottom suffer no wage losses. Floors and cushions explain this pattern. High-wage workers lose the cushion they earned above the average wage in their occupation, while the minimum wage sets a floor for low-wage workers. Firm wage premia play only a modest role.
