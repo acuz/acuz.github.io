@@ -17,6 +17,36 @@
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   {% seo %}
+  {%- if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Angelo Cuzzola",
+      "url": "{{ site.url }}/",
+      "email": "mailto:{{ site.author.email }}",
+      "jobTitle": "Postdoctoral Researcher",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "EPFL – Chair of Science, Technology, and Innovation Policy",
+        "url": "https://www.epfl.ch/labs/stip/"
+      },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Sant'Anna School of Advanced Studies" },
+      "knowsAbout": ["Economics of innovation", "Technology adoption", "International trade"],
+      "sameAs": [
+        "{{ site.links.orcid }}",
+        "{{ site.links.scholar }}",
+        "{{ site.links.researchgate }}",
+        "https://people.epfl.ch/angelo.cuzzola",
+        "https://github.com/acuz",
+        "https://sites.google.com/view/angelocuzzola"
+      ]
+    }
+  }
+  </script>
+  {%- endif %}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
