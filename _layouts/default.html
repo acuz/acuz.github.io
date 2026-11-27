@@ -27,6 +27,7 @@
       "name": "Angelo Cuzzola",
       "url": "{{ site.url }}/",
       "email": "mailto:{{ site.author.email }}",
+      "telephone": {{ site.author.phones | map: "tel" | jsonify }},
       "jobTitle": "Postdoctoral Researcher",
       "affiliation": {
         "@type": "Organization",

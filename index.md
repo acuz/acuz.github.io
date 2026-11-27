@@ -18,6 +18,7 @@ I hold a PhD in Economics from the Sant'Anna School of Advanced Studies (Pisa) a
 
 <address>
 <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><br>
+{% for phone in site.author.phones %}<a href="tel:{{ phone.tel }}">{{ phone.display }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}<br>
 EPFL CDM MTEI STIP, Odyssea 2 18, Station 5<br>
 CH-1015 Lausanne, Switzerland
 </address>
