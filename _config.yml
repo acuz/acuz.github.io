@@ -13,12 +13,6 @@ lang: en
 author:
   name: Angelo Cuzzola
   email: angelo.cuzzola@epfl.ch
-  # Phone numbers shown under Contact on the home page. `tel` is the dialable form (no spaces).
-  phones:
-    - display: +39 347 341 9176
-      tel: "+393473419176"
-    - display: +1 (510) 570-4799
-      tel: "+15105704799"
 
 # Optional portrait: put a square-ish image at assets/img/photo.jpg and set the path here.
 photo: ""

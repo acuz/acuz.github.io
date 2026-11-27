@@ -5,6 +5,3 @@ Do not update these when the site changes.
 
 Exception (2026-11-03): green.html was regenerated with the corrected green-products data
 (official HS2002 descriptions, HS4 headings) so the old Google Site does not show wrong labels.
-
-Exception (2026-11-27): phone numbers added to the Contact section of home.html so they also
-show on the old Google Site.
